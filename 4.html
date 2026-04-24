@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS Practice</title>
+</head>
+<body>
+
+<script>
+
+let login = prompt("Хто там?");
+
+if (login === "Admin") {
+
+    let password = prompt("Пароль?");
+
+    if (password === "Господар") {
+        alert("Ласкаво просимо!");
+    } else if (password === "" || password === null) {
+        alert("Скасовано");
+    } else {
+        alert("Неправильний пароль");
+    }
+
+} else if (login === "" || login === null) {
+    alert("Скасовано");
+} else {
+    alert("Я вас не знаю");
+}
+
+let user = {};
+user.name = "Марк";
+user.surname = "Сміт";
+user.name = "Тарас";
+delete user.name;
+
+console.log(user);
+
+function isEmpty(obj) {
+    for (let key in obj) {
+        return false;
+    }
+    return true;
+}
+
+let schedule = {};
+alert(isEmpty(schedule));
+schedule["8:30"] = "Вставай";
+alert(isEmpty(schedule));
+
+let salaries = {
+    Jarik: 1000,
+    Anna: 1600,
+    Miko: 1300
+};
+
+let sum = 0;
+
+for (let key in salaries) {
+    sum += salaries[key];
+}
+
+alert(sum);
+
+function multiplyNumeric(obj) {
+    for (let key in obj) {
+        if (typeof obj[key] === "number") {
+            obj[key] *= 2;
+        }
+    }
+}
+
+let menu = {
+    width: 200,
+    height: 300,
+    title: "Моє меню"
+};
+
+multiplyNumeric(menu);
+
+console.log(menu);
+
+</script>
+
+</body>
+</html>
